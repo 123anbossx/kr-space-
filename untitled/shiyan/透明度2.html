@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #qq{
+            width: 200px;
+            height: 50px;
+            background-color: yellow;
+            margin: 200px auto;
+            transition:box-shadow 2s linear;
+        }
+
+    </style>
+</head>
+<body>
+  <div id="qq"></div>
+  <script>
+      var Oqq=document.getElementById('qq');
+      Oqq.onmouseover=function (){
+
+          this.style.boxShadow='10px 10px 10px 10px red'
+      }
+  </script>
+</body>
+</html>

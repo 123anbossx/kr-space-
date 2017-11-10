@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text"v-model="mes">
+    <button v-on:click="change"></button>
+
+    {{change1}}
+</div>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            mes:'hello world'
+        },
+        methods:{
+            change:function () {
+                this.mes=this.mes.split(' ').reverse().join()
+            }
+        },
+        computed:{
+           change1:function () {
+             return Date.now()
+           }
+        }
+    });
+   
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="text">
+<button id="btn">点击</button>
+<script>
+    var btn=document.getElementById('btn');
+    btn.onclick=function () {
+        Range();
+    }
+    function Range() {
+        var oinput = document.getElementById('text');
+        var value = oinput.value;
+        var valuelenth = value.length;
+        oinput.focus();
+        var ss=oinput.setSelectionRange(0,valuelenth);
+        console.log(ss);
+        document.execCommand('Copy', 'false', null);
+        alert('复制成功');
+    }
+</script>
+</body>
+</html>

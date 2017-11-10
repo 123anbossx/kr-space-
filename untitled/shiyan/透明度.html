@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       #dd{
+           background-color: #CCCCCC;
+           transition:background-image 2s linear;
+           width: 200px;
+           height: 200px;
+       }
+    </style>
+</head>
+<body>
+<div id="dd"></div>
+<script>
+    var Odd=document.getElementById('dd');
+      Odd.onmouseover=function () {
+          this.style.backgroundImage='url("img/cute.png")';
+          this.style.backgroundRepeat="no-repeat";
+          this.style.backgroundSize="cover";
+      }
+</script>
+</body>
+</html>

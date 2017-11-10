@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #odiv{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <todo-one v-for="todos in todo" v-bind:data="todos"></todo-one>
+    <button v-on:click="jiaohu"></button>
+    <span v-bind:title="message"></span>
+    <input type="text"v-model="message">
+  <li v-for="todos in todo">
+      {{todos.text}}
+  </li>
+        <div id="odiv" v-if="seen" ></div>
+    {{message}}
+</div>
+<script>
+    Vue.component('todo-one',{
+        props:['data'],
+        template:'<li>{{data.text}}</li>'
+    });
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            message:'我是一个vue对象',
+            seen:true,
+            todo:[  {text:'第一个内容'},
+                {text:'第二个内容'} ,
+                {text:'第三个内容'}]
+        },
+        methods:{
+            jiaohu:function () {
+                console.log(123)
+            }
+        }
+    });
+vm.$watch('message',function (newvalue,oldvalue) {
+    console.log(newvalue)
+})
+</script>
+</body>
+</html>

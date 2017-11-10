@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .classone{
+            width: 100px;
+            height:100px;
+            background-color: red;
+        }
+        .classtwo{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{mes}}
+    <div v-bind:class="{classone:test1,classtwo:test2}"></div>
+</div>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            mes:'这是一个vue实列',
+            test1:true,
+            test2:false
+        }
+    })
+</script>
+</body>
+</html>

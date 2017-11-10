@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+
+    <input type="text"v-model="type">
+     <button v-on:click="test">检测</button>
+ <h1>{{value}}</h1>
+    <template v-if="ok">
+        我的大刀早已饥渴难耐
+    </template>
+
+</div>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            seen:true,
+            ok:true,
+            isseen:true,
+            type:'mes',
+            value:''
+
+        },
+        computed:{
+            mesage:function () {
+                return typeof this.type
+            }
+        },
+        methods:{
+            test:function () {
+                this.value=typeof this.type
+            }
+        }
+    })
+</script>
+</body>
+</html>
